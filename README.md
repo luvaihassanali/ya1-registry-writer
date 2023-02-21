@@ -1,5 +1,11 @@
 node v16.14.0
 
+Run as administrator:
+```
+npm install
+npm start
+```
+
 SAMPLE INPUT:
 
 [
