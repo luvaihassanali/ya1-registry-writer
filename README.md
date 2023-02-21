@@ -29,5 +29,12 @@ SAMPLE INPUT:
 "path": "HKEY_LOCAL_MACHINE\\Software\\Wow6432Node\\Names",
 "name": "Number",
 "value": "123"
+},
+{
+"type": "registry",
+"regType": "qword",
+"path": "HKEY_LOCAL_MACHINE\\Software\\Wow6432Node\\Names",
+"name": "qword1",
+"value": "0"
 }
 ]

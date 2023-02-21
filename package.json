@@ -1,6 +1,6 @@
 {
   "name": "registry-writer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Write to registry using C# integration",
   "main": "main.js",
   "scripts": {

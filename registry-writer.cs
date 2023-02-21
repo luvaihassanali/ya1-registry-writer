@@ -23,10 +23,10 @@ public class Startup
         string rawData = (string)input;
         List<RegistryData> rdList = JsonConvert.DeserializeObject<List<RegistryData>>(rawData);
 
-        RegistryKey key;
-        key = Registry.LocalMachine.CreateSubKey("Software\\Wow6432Node\\Names");
+        RegistryKey key = null;
         foreach (RegistryData rd in rdList)
         {
+            key = Registry.LocalMachine.CreateSubKey(rd.Path.Replace("HKEY_LOCAL_MACHINE\\",""));
             string regTypeStr = rd.RegType.ToLower();
             switch (regTypeStr)
             {
@@ -57,8 +57,8 @@ public class Startup
                 default:
                     return "Failed: RegType not recognized for entry " + rd.Name;
             }
+            key.Close();
         }
-        key.Close();
         try { key.Dispose(); } catch (Exception e) { return "Failed: " + e.Message; }
         return "Success!";
     }
